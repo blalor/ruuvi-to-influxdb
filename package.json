@@ -1,0 +1,17 @@
+{
+  "name": "ruuvi-to-influxdb",
+  "version": "0.0.1",
+  "description": "stores all ruuvitag weather data to influxdb",
+  "main": "ruuvi.js",
+  "dependencies": {
+    "influx": "^5.0.7",
+    "js-yaml": "^3.9.1",
+    "node-ruuvitag": "^3.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
