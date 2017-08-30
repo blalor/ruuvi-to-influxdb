@@ -1,0 +1,14 @@
+influx:
+    host: localhost
+    database: ruuvi
+
+## provide a label for the devices so we know what they are
+devices:
+    3183d0fedd8a47c0a9698c46aa49f8d4:
+        label: downstairs
+    
+    ffa365dd28a844b8aa67b9a9ba3f7990:
+        label: upstairs
+    
+    fa44b40aa9bd4ad08f8876cb60b60861:
+        label: outside
