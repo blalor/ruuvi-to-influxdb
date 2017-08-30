@@ -51,18 +51,22 @@ const influx = new Influx.InfluxDB({
 
 
 Ruuvi.on("found", function(tag) {
-    console.log("found " + tag.id);
+    var id = tag.id;
+    
+    var label = "unknown"
+    if (config.devices[id]) {
+        label = config.devices[id].label;
+    }
+
+    console.log("found %s (%s)", id, label);
     
     tag.on("updated", function(data) {
-        console.log("Got data from RuuviTag " + tag.id + ":\n" + JSON.stringify(data, null, "\t"));
+        console.log("Got data from %s (%s):", id, label, data);
         
         var tags = {
-            id: tag.id,
+            id: id,
+            label: label,
         };
-        
-        if (config.devices[tag.id]) {
-            tags["label"] = config.devices[tag.id].label;
-        }
         
         influx.writePoints([
             {
